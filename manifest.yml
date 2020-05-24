@@ -1,0 +1,9 @@
+applications:
+- name: gallery
+  path: target/gallery-1.0.0-SNAPSHOT.war
+  memory: 256m
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{memory_calculator: {stack_threads: 16}}'
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+    JAVA_OPTS: -XX:ReservedCodeCacheSize=32M -Xss512k -Duser.timezone=Asia/Tokyo
+    SPRING_PROFILES_ACTIVE: cloud
